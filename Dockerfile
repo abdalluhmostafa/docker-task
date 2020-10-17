@@ -22,7 +22,5 @@ RUN apt-get install --no-install-recommends -y -q curl build-essential ca-certif
 # Copy start.sh script and define default command for the container
 COPY start.sh /usr/local/bin/start.sh
 WORKDIR /home
-
-#ENTRYPOINT ["start.sh"]
 CMD source .env
 ENTRYPOINT ["sh", "/usr/local/bin/start.sh"]
