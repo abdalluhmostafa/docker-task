@@ -19,11 +19,10 @@ RUN apt-get install golang -yq
 # Disable Prompt During Packages Installation
 RUN apt-get install --no-install-recommends -y -q curl build-essential ca-certificates git
 
-
 # Copy start.sh script and define default command for the container
 COPY start.sh /usr/local/bin/start.sh
-#COPY start.sh /start.sh
 WORKDIR /home
+
 #ENTRYPOINT ["start.sh"]
 CMD source .env
 ENTRYPOINT ["sh", "/usr/local/bin/start.sh"]
